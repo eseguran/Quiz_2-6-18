@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -98,30 +99,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="The Switch is On" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SWR-Ue-JDB">
-                                <rect key="frame" x="122" y="272" width="130" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrb-D1-C1c">
-                                <rect key="frame" x="119" y="107" width="137" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrb-D1-C1c">
+                                <rect key="frame" x="119" y="76" width="137" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="S26-rB-xIK"/>
+                                </constraints>
                                 <state key="normal" title="Cambiar Estado"/>
                                 <connections>
                                     <action selector="buttonClicked:" destination="9Xa-fv-THB" eventType="touchUpInside" id="AfH-Ll-WzI"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3bY-BS-1Uj">
-                                <rect key="frame" x="164" y="199" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3bY-BS-1Uj">
+                                <rect key="frame" x="163" y="137" width="51" height="31"/>
                                 <connections>
                                     <action selector="stateChenged:" destination="9Xa-fv-THB" eventType="valueChanged" id="aVb-wz-gCn"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKZ-Fy-Fhc">
+                                <rect key="frame" x="24" y="617" width="30" height="30"/>
+                                <state key="normal" title="IZ"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9S-ZQ-L9S">
+                                <rect key="frame" x="321" y="617" width="30" height="30"/>
+                                <state key="normal" title="DE"/>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eMu-JB-Ekx">
+                                <rect key="frame" x="16" y="240" width="343" height="379"/>
+                            </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="The Switch is On" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SWR-Ue-JDB">
+                                <rect key="frame" x="122" y="189" width="130" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qrb-D1-C1c" firstAttribute="leading" secondItem="nyC-Lf-Hmc" secondAttribute="leading" constant="119" id="0to-rN-TPr"/>
+                            <constraint firstItem="eMu-JB-Ekx" firstAttribute="trailing" secondItem="Dhq-aG-hNA" secondAttribute="trailingMargin" id="MRg-MG-xPd"/>
+                            <constraint firstItem="AKZ-Fy-Fhc" firstAttribute="baseline" secondItem="E9S-ZQ-L9S" secondAttribute="baseline" id="QHv-e2-URe"/>
+                            <constraint firstItem="eMu-JB-Ekx" firstAttribute="centerX" secondItem="SWR-Ue-JDB" secondAttribute="centerX" id="QIC-se-Qxk"/>
+                            <constraint firstItem="SWR-Ue-JDB" firstAttribute="centerX" secondItem="3bY-BS-1Uj" secondAttribute="centerX" id="R1J-ra-jTg"/>
+                            <constraint firstItem="AKZ-Fy-Fhc" firstAttribute="leading" secondItem="nyC-Lf-Hmc" secondAttribute="leading" constant="24" id="UXY-dU-sxz"/>
+                            <constraint firstItem="SWR-Ue-JDB" firstAttribute="centerX" secondItem="qrb-D1-C1c" secondAttribute="centerX" id="Wa9-9S-Put"/>
+                            <constraint firstItem="3bY-BS-1Uj" firstAttribute="top" secondItem="qrb-D1-C1c" secondAttribute="bottom" constant="8" symbolic="YES" id="Z1m-AF-2Na"/>
+                            <constraint firstAttribute="bottom" secondItem="E9S-ZQ-L9S" secondAttribute="bottom" constant="20" symbolic="YES" id="c8u-hM-BZI"/>
+                            <constraint firstItem="qrb-D1-C1c" firstAttribute="top" secondItem="nyC-Lf-Hmc" secondAttribute="top" constant="12" id="gUB-6j-KlZ"/>
+                            <constraint firstItem="SWR-Ue-JDB" firstAttribute="top" secondItem="3bY-BS-1Uj" secondAttribute="bottom" constant="21" id="hU0-ne-GqE"/>
+                            <constraint firstItem="eMu-JB-Ekx" firstAttribute="top" secondItem="SWR-Ue-JDB" secondAttribute="bottom" constant="21" id="l3b-JR-ldK"/>
+                            <constraint firstItem="eMu-JB-Ekx" firstAttribute="leading" secondItem="Dhq-aG-hNA" secondAttribute="leadingMargin" id="sw0-UO-1kq"/>
+                            <constraint firstItem="nyC-Lf-Hmc" firstAttribute="trailing" secondItem="E9S-ZQ-L9S" secondAttribute="trailing" constant="24" id="w8N-oq-pYD"/>
+                            <constraint firstItem="nyC-Lf-Hmc" firstAttribute="bottom" secondItem="eMu-JB-Ekx" secondAttribute="bottom" constant="48" id="wO4-dT-ntG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nyC-Lf-Hmc"/>
                     </view>
                     <connections>
