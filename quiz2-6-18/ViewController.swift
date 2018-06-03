@@ -15,10 +15,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var label: UILabel!
+
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var stateSwitch: UISwitch!
-    @IBOutlet weak var textField: UILabel!
-   
-    @IBAction func buttonClicked(_ sender: Any) {
+    
+  
+    @IBAction func buttonClicked(_ sender: UIButton) {
         if stateSwitch.isOn {
             textField.text = "The Switch is Off"
             stateSwitch.setOn(false, animated:true)
@@ -28,9 +30,7 @@ class ViewController: UIViewController {
         }
     }
     
-   
-  
- 
+    
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         let currentValue = Int(sender.value)
@@ -51,25 +51,34 @@ class ViewController: UIViewController {
     @IBOutlet weak var imagen: UIImageView!
     @IBAction func botontouch(_ sender: Any) {
      
-        if imagen.isHidden == true {
-        imagen.isHidden = false
+        if imagen.isHidden == true {        imagen.isHidden = false
                boton.setTitle("Ocultar", for: .normal)
-        }else {
-            imagen.isHidden = true
+        }else {            imagen.isHidden = true
             boton.setTitle("Mostrar", for: .normal)
-            
         }
-     
     }
     @IBOutlet weak var boton: UIButton!
     
-  
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // stateSwitch.addTarget(self, action: #selector(stateChanged), for: UIControlEvents.valueChanged)
-     
-}
+        
+       // stateSwitch.addTarget(self, action: #selector(stateChanged), for: UIControlEvents.valueChanged)
+        
+    }
+    
+    @IBAction func stateChenged(_ sender: UISwitch) {
+        
+            if stateSwitch.isOn {
+                textField.text = "The Switch is On"
+            } else {
+                textField.text = "The Switch is Off"
+            }
+    }
+    
+  
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -77,14 +86,7 @@ class ViewController: UIViewController {
     }
     
     
-    
-    @objc func stateChanged(switchState: UISwitch) {
-        if switchState.isOn {
-            textField.text = "The Switch is On"
-        } else {
-            textField.text = "The Switch is Off"
-        }
-    }
+  
     
 }
 
